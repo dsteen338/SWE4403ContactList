@@ -13,7 +13,16 @@ public class ContactManager {
 
 
     public void deleteContact(int id) {
-        Entity c = dataManager.getContactList().stream().filter(contact -> contact.getId() == id).findFirst().orElse(null);
-        dataManager.getContactList().delete(c);
+
+        GoFListEntityIterator iter = new GoFListEntityIterator(dataManager.getContactList());
+
+        for(iter.first(); !iter.isDone(); iter.next()) {
+            Entity currentContact = iter.currentItem();
+
+            if (currentContact.getId() == id) {
+                dataManager.getContactList().delete(currentContact);
+            }
+        }
+
     }
 }
