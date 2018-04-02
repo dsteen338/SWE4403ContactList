@@ -8,7 +8,7 @@ public class ContactFinder {
 
     private DataManager dataManager = DataManager.getInstance();
 
-    public List<Contact> findContact(String firstName) {
+    public List<Entity> findContact(String firstName) {
         GoFList contactList = dataManager.getContactList();
         return contactList.stream().filter(contact -> contact.getFirstName().equals(firstName)).collect(Collectors.toList());
 

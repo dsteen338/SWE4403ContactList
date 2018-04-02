@@ -6,7 +6,6 @@ import com.google.gson.stream.JsonReader;
 
 import java.io.*;
 import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.List;
 
 public class DataManager {
@@ -40,11 +39,11 @@ public class DataManager {
         JsonReader reader = new JsonReader(new FileReader(FILENAME));
 
 
-        Type collectionType = new TypeToken<List<Contact>>(){}.getType();
-        List<Contact> inContactList = (List<Contact>) new Gson().fromJson(reader, collectionType);
+        Type collectionType = new TypeToken<List<Entity>>(){}.getType();
+        List<Entity> inContactList = (List<Entity>) new Gson().fromJson(reader, collectionType);
 
 
-        for (Contact contact : inContactList) {
+        for (Entity contact : inContactList) {
             contactList.append(contact);
 
             if(contact.getId() >= nextId) {

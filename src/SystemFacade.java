@@ -3,8 +3,15 @@ import java.util.List;
 
 public class SystemFacade {
     private ContactManager contactManager = new ContactManager();
-    private ContactFinder contactFinder = new ContactFinder();
-    private DataManager dataManager = DataManager.getInstance();
+    private ContactFinder contactFinder;
+    private DataManager dataManager;
+
+
+    public SystemFacade() {
+        this.contactManager =  new ContactManager();
+        this.contactFinder = new ContactFinder();
+        this.dataManager =  DataManager.getInstance();
+    }
 
     public void addContact(String contactInfo) {
         contactManager.addContact(contactInfo);
@@ -16,11 +23,11 @@ public class SystemFacade {
 
 
     public void searchContact(String name) {
-        List<Contact> contacts = contactFinder.findContact(name);
+        List<Entity> contacts = contactFinder.findContact(name);
         if (contacts.isEmpty())
             System.out.println("No contact found.");
         else {
-            for (Contact contact : contacts) {
+            for (Entity contact : contacts) {
                 System.out.println(contact.toString());
             }
         }

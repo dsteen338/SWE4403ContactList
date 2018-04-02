@@ -4,10 +4,10 @@ import java.util.stream.Stream;
 
 public class GoFListAdapter implements GoFList {
 
-    private ArrayList<Contact> arrayList;
+    private ArrayList<Entity> arrayList;
 
     public GoFListAdapter() {
-        arrayList = new ArrayList<Contact>();
+        arrayList = new ArrayList<Entity>();
     }
 
     @Override
@@ -16,39 +16,39 @@ public class GoFListAdapter implements GoFList {
     }
 
     @Override
-    public Contact get(int index) {
+    public Entity get(int index) {
         return arrayList.get(index);
     }
 
     @Override
-    public Contact first() {
+    public Entity first() {
         return arrayList.get(0);
     }
 
     @Override
-    public Contact last() {
+    public Entity last() {
         return arrayList.get(arrayList.size() - 1);
     }
 
     @Override
-    public boolean include(Contact contact) {
+    public boolean include(Entity contact) {
         return arrayList.contains(contact);
     }
 
     @Override
-    public void append(Contact contact) {
+    public void append(Entity contact) {
         arrayList.add(contact);
 
     }
 
     @Override
-    public void prepend(Contact contact) {
+    public void prepend(Entity contact) {
         arrayList.add(0, contact);
 
     }
 
     @Override
-    public void delete(Contact obj) {
+    public void delete(Entity obj) {
         arrayList.remove(obj);
 
     }
@@ -72,13 +72,13 @@ public class GoFListAdapter implements GoFList {
     }
 
     @Override
-    public Stream<Contact> stream() {
+    public Stream<Entity> stream() {
         return arrayList.stream();
 
     }
 
     //needed for save
-    public ArrayList<Contact> getArrayList() {
+    public ArrayList<Entity> getArrayList() {
         return arrayList;
     }
 }
