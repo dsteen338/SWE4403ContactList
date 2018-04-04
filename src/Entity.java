@@ -1,6 +1,6 @@
 import java.io.Serializable;
 
-public class Entity implements Serializable {
+public abstract class Entity implements Serializable {
 
     private String firstName;
 
@@ -63,6 +63,9 @@ public class Entity implements Serializable {
     public void setId(int id) {
         this.id = id;
     }
+
+    public abstract void accept(EntityVisitor entityVisitor);
+
 
     public String toString() {
         return this.getFirstName() + " " + this.getLastName() + " " + this.getAddress() + " " + this.getPhone() + " " + this.getEmail();

@@ -77,9 +77,4 @@ public class GoFListAdapter implements GoFList, Serializable {
         return arrayList.stream();
 
     }
-
-    //needed for save
-    public ArrayList<Entity> getArrayList() {
-        return arrayList;
-    }
 }

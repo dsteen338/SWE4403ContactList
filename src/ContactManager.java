@@ -8,7 +8,8 @@ public class ContactManager {
         String[] lineArr = inContact.split(" ");
         Entity contact = factory.createEntity(lineArr[0], lineArr[1], lineArr[2], lineArr[3], lineArr[4]);
         contact.setId(dataManager.getNextId());
-        contactList.append(contact);
+        contact.accept(new ContactAddVisitor());
+
     }
 
 
@@ -20,7 +21,7 @@ public class ContactManager {
             Entity currentContact = iter.currentItem();
 
             if (currentContact.getId() == id) {
-                dataManager.getContactList().delete(currentContact);
+                currentContact.accept(new ContactDeleteVisitor());
             }
         }
 

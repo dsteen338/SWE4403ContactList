@@ -10,4 +10,10 @@ public class Contact extends Entity implements Serializable {
         super.setEmail(email);
     }
 
+    @Override
+    public  void accept(EntityVisitor entityVisitor) {
+        entityVisitor.visit(this);
+    }
+
+
 }

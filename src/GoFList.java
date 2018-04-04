@@ -14,5 +14,4 @@ public interface GoFList {
     void deleteFirst();  //remove the first element of the list
     void deleteAll();  //remove all elements of the list
     Stream<Entity> stream(); //needed to stream objects for filter
-    ArrayList<Entity> getArrayList(); //needed for json save
 }
