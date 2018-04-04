@@ -1,4 +1,6 @@
-public class Contact extends Entity {
+import java.io.Serializable;
+
+public class Contact extends Entity implements Serializable {
 
     public Contact(String firstName, String lastName, String address, String phone, String email) {
         super.setFirstName(firstName);

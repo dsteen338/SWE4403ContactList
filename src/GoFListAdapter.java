@@ -1,8 +1,9 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.stream.Stream;
 
 
-public class GoFListAdapter implements GoFList {
+public class GoFListAdapter implements GoFList, Serializable {
 
     private ArrayList<Entity> arrayList;
 

@@ -1,17 +1,9 @@
 
-
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-
 import java.io.*;
-import java.lang.reflect.Type;
-import java.util.List;
 
 public class DataManager {
 
     private GoFList contactList = new GoFListAdapter();
-    Gson gson = new Gson();
     private static final String FILENAME = "contacts.txt";
     private int nextId = 1;
 
@@ -35,35 +27,32 @@ public class DataManager {
         return contactList;
     }
 
-    public void load() throws IOException {
-        JsonReader reader = new JsonReader(new FileReader(FILENAME));
+    public void load() throws IOException, ClassNotFoundException {
 
+        FileInputStream fileInputStream = new FileInputStream(FILENAME);
+        ObjectInputStream ObjectInStream = new ObjectInputStream(fileInputStream);
 
-        Type collectionType = new TypeToken<List<Entity>>(){}.getType();
-        List<Entity> inContactList = (List<Entity>) new Gson().fromJson(reader, collectionType);
+        contactList = (GoFList) ObjectInStream.readObject();
 
-
-        for (Entity contact : inContactList) {
-            contactList.append(contact);
-
-            if(contact.getId() >= nextId) {
-                nextId = contact.getId() + 1;
-            }
-        }
-
-
-        reader.close();
+        fileInputStream.close();
+        ObjectInStream.close();
     }
 
     public void save() throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter(FILENAME));
-        writer.close();
 
-        writer = new BufferedWriter(new FileWriter(FILENAME));
+        FileOutputStream fileOutputStream = new FileOutputStream(FILENAME);
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
 
-        gson.toJson(contactList.getArrayList(), writer);
+        fileOutputStream.close();
+        objectOutputStream.close();
 
-        writer.close();
+        fileOutputStream = new FileOutputStream(FILENAME);
+        objectOutputStream = new ObjectOutputStream(fileOutputStream);
+
+        objectOutputStream.writeObject(contactList);
+
+        fileOutputStream.close();
+        objectOutputStream.close();
 
     }
 

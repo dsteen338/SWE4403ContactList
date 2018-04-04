@@ -37,7 +37,7 @@ public class SystemFacade {
         dataManager.save();
     }
 
-    public void loadContacts() throws IOException {
+    public void loadContacts() throws IOException, ClassNotFoundException {
         dataManager.load();
     }
 }
