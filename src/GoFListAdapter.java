@@ -77,4 +77,5 @@ public class GoFListAdapter implements GoFList, Serializable {
         return arrayList.stream();
 
     }
+
 }
