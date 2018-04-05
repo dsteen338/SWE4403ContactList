@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.stream.Stream;
-
 public interface GoFList {
     int count();  //return the current number of elements in the list
     Entity get(int index);  //return the object at the index in the list
@@ -13,5 +10,4 @@ public interface GoFList {
     void deleteLast();  //remove the last element of the list
     void deleteFirst();  //remove the first element of the list
     void deleteAll();  //remove all elements of the list
-    Stream<Entity> stream(); //needed to stream objects for filter
 }

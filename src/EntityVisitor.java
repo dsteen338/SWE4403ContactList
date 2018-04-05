@@ -1,3 +1,3 @@
 public interface EntityVisitor {
-    public void visit(Contact contact);
+    void visit(Contact contact);
 }

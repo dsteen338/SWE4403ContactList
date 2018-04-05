@@ -1,3 +1,3 @@
 public interface InsertionStrategy {
-    public void insert(Entity contact);
+    void insert(Entity contact);
 }

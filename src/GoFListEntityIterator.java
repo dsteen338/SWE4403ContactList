@@ -7,8 +7,8 @@ public class GoFListEntityIterator {
         this.list = list;
     }
 
-    void first(){index = 0;};
-    void next(){index++;};
+    void first(){index = 0;}
+    void next(){index++;}
     boolean isDone() {
         return list.count() <= index;
     }

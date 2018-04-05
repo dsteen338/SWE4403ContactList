@@ -1,6 +1,5 @@
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.stream.Stream;
 
 
 public class GoFListAdapter implements GoFList, Serializable {
@@ -69,12 +68,6 @@ public class GoFListAdapter implements GoFList, Serializable {
     @Override
     public void deleteAll() {
         arrayList.clear();
-
-    }
-
-    @Override
-    public Stream<Entity> stream() {
-        return arrayList.stream();
 
     }
 

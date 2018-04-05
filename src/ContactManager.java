@@ -4,7 +4,6 @@ public class ContactManager {
     EntityFactory factory = new ContactFactory();
 
     public void addContact(String inContact) {
-        GoFList contactList = dataManager.getContactList();
         String[] lineArr = inContact.split(" ");
         Entity contact = factory.createEntity(lineArr[0], lineArr[1], lineArr[2], lineArr[3], lineArr[4]);
         contact.setId(dataManager.getNextId());
