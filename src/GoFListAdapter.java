@@ -2,16 +2,16 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 
-public class GoFListAdapter extends GoFList implements Serializable {
+public class GoFListAdapter implements GoFList, Serializable {
 
 
+    public ArrayList<Entity> arrayList;
     public GoFListAdapter() {
-        super();
         this.arrayList = new ArrayList<Entity>();
     }
 
-    public GoFListAdapter(GoFList contactList) {
-        arrayList = new ArrayList<Entity>(contactList.arrayList);
+    public GoFListAdapter(ArrayList<Entity> inList) {
+        arrayList = inList;
     }
 
 

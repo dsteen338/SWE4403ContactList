@@ -1,4 +1,6 @@
 import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 
 public class SystemFacade {
@@ -36,7 +38,15 @@ public class SystemFacade {
 
     public CListMomento createMomento() {
         CListMomento cm = new CListMomento();
-        GoFList copiedList = new GoFListAdapter(dataManager.getContactList());
+        ArrayList<Entity> tempContacts = new ArrayList<>();
+
+        GoFListEntityIterator iter = new GoFListEntityIterator(dataManager.getContactList());
+        for(iter.first(); !iter.isDone(); iter.next()) {
+            tempContacts.add(dataManager.getContactList().get(0));
+
+        }
+
+        GoFList copiedList = new GoFListAdapter(tempContacts);
         cm.setState(copiedList);
         return cm;
     }
