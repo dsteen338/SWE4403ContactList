@@ -70,4 +70,6 @@ public abstract class Entity implements Serializable {
     public String toString() {
         return this.getFirstName() + " " + this.getLastName() + " " + this.getAddress() + " " + this.getPhone() + " " + this.getEmail();
     }
+
+    public abstract Entity getDecoratedEntity();
 }

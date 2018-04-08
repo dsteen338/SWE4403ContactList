@@ -172,7 +172,10 @@ public class SearchUI extends javax.swing.JFrame {
 
 
             for (Entity contact : contacts) {
-                tableModel.addRow(new Object[] {contact.getFirstName(), contact.getLastName(), contact.getAddress(), contact.getPhone(), contact.getEmail(), new Integer(contact.getId())});
+                Entity starDecoratedEntity = new StarsDecorator(contact);
+                Entity squareDecoratedEntity = new SquareBracketsDecorator(starDecoratedEntity.getDecoratedEntity());
+                Entity decoratedContact = squareDecoratedEntity.getDecoratedEntity();
+                tableModel.addRow(new Object[] {decoratedContact.getFirstName(), decoratedContact.getLastName(), decoratedContact.getAddress(), decoratedContact.getPhone(), decoratedContact.getEmail(), new Integer(decoratedContact.getId())});
             }
         }
         

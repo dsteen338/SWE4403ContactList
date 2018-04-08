@@ -24,5 +24,10 @@ public class Contact extends Entity implements Serializable, Comparable<Contact>
         return this.getFirstName() + " " + this.getLastName() + " " + this.getAddress() + " " + this.getPhone() + " " + this.getEmail() + " " + this.getId();
     }
 
+    @Override
+    public Entity getDecoratedEntity() {
+        return this;
+    }
+
 
 }
