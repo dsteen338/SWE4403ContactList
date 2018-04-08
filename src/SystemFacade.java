@@ -33,4 +33,15 @@ public class SystemFacade {
     public void loadContacts() throws IOException, ClassNotFoundException {
         dataManager.load();
     }
+
+    public CListMomento createMomento() {
+        CListMomento cm = new CListMomento();
+        GoFList copiedList = new GoFListAdapter(dataManager.getContactList());
+        cm.setState(copiedList);
+        return cm;
+    }
+
+    public void setMomento(CListMomento cListMomento) {
+        this.dataManager.setContactList(cListMomento.getState());
+    }
 }

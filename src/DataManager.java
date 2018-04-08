@@ -3,12 +3,13 @@ import java.io.*;
 
 public class DataManager {
 
-    private GoFList contactList = new GoFListAdapter();
+    private GoFList contactList;
     private static final String FILENAME = "contacts.txt";
     private int nextId = 1;
 
     private DataManager() {
         super();
+        this.contactList = new GoFListAdapter();
     }
 
     private static DataManager singleInstance;
@@ -26,6 +27,11 @@ public class DataManager {
     public GoFList getContactList() {
         return contactList;
     }
+
+    public void setContactList(GoFList inContactList) {
+        this.contactList = inContactList;
+    }
+
 
     public void load() throws IOException, ClassNotFoundException {
 
