@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class ContactFinder {
 
 
-    private DataManager dataManager = DataManager.getInstance();
+    private DataManagerProxy dataManager = DataManagerProxy.getInstance();
 
     public List<Contact> findContact(String firstName) {
         List<Contact> returnList = new ArrayList<>();

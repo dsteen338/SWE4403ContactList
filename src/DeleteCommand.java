@@ -1,6 +1,8 @@
+import javax.xml.crypto.Data;
+
 public class DeleteCommand extends CListCommand  {
     private GoFList contactList;
-    private DataManager dataManager = DataManager.getInstance();
+    private DataManagerProxy dataManager = DataManagerProxy.getInstance();
     private SystemFacade systemFacade = SystemFacade.getInstance();
     private int id;
     private CListMomento cListMomento;

@@ -1,5 +1,5 @@
 public class InsertAtEndStrategy implements InsertionStrategy {
-    private DataManager dataManager = DataManager.getInstance();
+    private DataManagerProxy dataManager = DataManagerProxy.getInstance();
 
 
     @Override

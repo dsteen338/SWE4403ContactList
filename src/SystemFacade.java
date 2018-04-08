@@ -1,12 +1,11 @@
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
 public class SystemFacade {
     private ContactManager contactManager = new ContactManager();
     private ContactFinder contactFinder;
-    private DataManager dataManager;
+    private DataManagerProxy dataManager;
 
     private static SystemFacade singleInstance;
 
@@ -22,7 +21,7 @@ public class SystemFacade {
     private SystemFacade() {
         this.contactManager =  new ContactManager();
         this.contactFinder = new ContactFinder();
-        this.dataManager =  DataManager.getInstance();
+        this.dataManager =  DataManagerProxy.getInstance();
     }
 
     public void addContact(String firstName, String lastName, String address, String phone, String email) {

@@ -1,6 +1,6 @@
 public class ContactManager {
 
-    private DataManager dataManager = DataManager.getInstance();
+    private DataManagerProxy dataManager = DataManagerProxy.getInstance();
     EntityFactory factory = new ContactFactory();
 
     public void addContact(String firstName, String lastName, String address, String phone, String email) {

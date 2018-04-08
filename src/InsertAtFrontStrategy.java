@@ -1,5 +1,5 @@
 public class InsertAtFrontStrategy implements InsertionStrategy {
-    private DataManager dataManager = DataManager.getInstance();
+    private DataManagerProxy dataManager = DataManagerProxy.getInstance();
 
     @Override
     public void insert(Entity contact) {

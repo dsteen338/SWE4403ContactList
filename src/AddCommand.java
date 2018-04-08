@@ -1,7 +1,7 @@
 
 public class AddCommand extends CListCommand  {
    private GoFList contactList;
-   private DataManager dataManager = DataManager.getInstance();
+   private DataManagerProxy dataManager = DataManagerProxy.getInstance();
    private SystemFacade systemFacade = SystemFacade.getInstance();
    private CListMomento cListMomento;
    private String firstName;

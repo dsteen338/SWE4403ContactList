@@ -1,5 +1,5 @@
 public class ContactDeleteVisitor implements EntityVisitor {
-    private DataManager dataManager = DataManager.getInstance();
+    private DataManagerProxy dataManager = DataManagerProxy.getInstance();
 
 
     @Override
