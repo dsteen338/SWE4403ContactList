@@ -33,6 +33,15 @@ public class DataManager {
         ObjectInputStream ObjectInStream = new ObjectInputStream(fileInputStream);
 
         contactList = (GoFList) ObjectInStream.readObject();
+        
+        GoFListEntityIterator iter = new GoFListEntityIterator(contactList);
+        for(iter.first(); !iter.isDone(); iter.next()) {
+            Entity currentContact = iter.currentItem();
+
+           if(currentContact.getId() >= nextId) {
+                 nextId = currentContact.getId() + 1;
+             }
+        }
 
         fileInputStream.close();
         ObjectInStream.close();

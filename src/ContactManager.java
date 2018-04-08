@@ -3,17 +3,15 @@ public class ContactManager {
     private DataManager dataManager = DataManager.getInstance();
     EntityFactory factory = new ContactFactory();
 
-    public void addContact(String inContact) {
-        String[] lineArr = inContact.split(" ");
-        Entity contact = factory.createEntity(lineArr[0], lineArr[1], lineArr[2], lineArr[3], lineArr[4]);
+    public void addContact(String firstName, String lastName, String address, String phone, String email) {
+        Entity contact = factory.createEntity(firstName, lastName, address, phone, email);
         contact.setId(dataManager.getNextId());
         contact.accept(new ContactAddVisitor());
 
     }
 
 
-    public void deleteContact(int id) {
-
+    public boolean deleteContact(int id) {
         GoFListEntityIterator iter = new GoFListEntityIterator(dataManager.getContactList());
 
         for(iter.first(); !iter.isDone(); iter.next()) {
@@ -21,8 +19,9 @@ public class ContactManager {
 
             if (currentContact.getId() == id) {
                 currentContact.accept(new ContactDeleteVisitor());
+                return true;
             }
         }
-
+        return false;
     }
 }

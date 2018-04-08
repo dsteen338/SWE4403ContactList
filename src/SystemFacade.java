@@ -13,24 +13,17 @@ public class SystemFacade {
         this.dataManager =  DataManager.getInstance();
     }
 
-    public void addContact(String contactInfo) {
-        contactManager.addContact(contactInfo);
+    public void addContact(String firstName, String lastName, String address, String phone, String email) {
+        contactManager.addContact(firstName, lastName, address, phone, email);
     }
 
-    public void deleteContact(int id) {
-        contactManager.deleteContact(id);
+    public boolean deleteContact(int id) {
+        return contactManager.deleteContact(id);
     }
 
 
-    public void searchContact(String name) {
-        List<Entity> contacts = contactFinder.findContact(name);
-        if (contacts.isEmpty())
-            System.out.println("No contact found.");
-        else {
-            for (Entity contact : contacts) {
-                System.out.println(contact.toString());
-            }
-        }
+    public List<Contact> searchContact(String name) {
+        return contactFinder.findContact(name);        
     }
 
     public void saveContacts() throws IOException {

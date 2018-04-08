@@ -11,7 +11,7 @@ public class UI {
         if (input.equals("add")) {
             System.out.println("enter in the first information of the contact you wish to add");
             System.out.println("expected format: FirstName LastName Address Phone Email (each field separated by spaces)");
-            systemFacade.addContact(scan.nextLine());
+           // systemFacade.addContact(scan.nextLine());
 
         } else if (input.equals("delete")) {
             System.out.println("enter in the Id of the contact you wish to delete");
