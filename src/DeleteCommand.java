@@ -1,7 +1,7 @@
 public class DeleteCommand extends CListCommand  {
     private GoFList contactList;
     private DataManager dataManager = DataManager.getInstance();
-    private SystemFacade systemFacade = new SystemFacade();
+    private SystemFacade systemFacade = SystemFacade.getInstance();
     private int id;
     private CListMomento cListMomento;
 

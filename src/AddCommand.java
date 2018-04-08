@@ -2,7 +2,7 @@
 public class AddCommand extends CListCommand  {
    private GoFList contactList;
    private DataManager dataManager = DataManager.getInstance();
-   private SystemFacade systemFacade = new SystemFacade();
+   private SystemFacade systemFacade = SystemFacade.getInstance();
    private CListMomento cListMomento;
    private String firstName;
    private String lastName;

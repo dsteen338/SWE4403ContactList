@@ -8,8 +8,18 @@ public class SystemFacade {
     private ContactFinder contactFinder;
     private DataManager dataManager;
 
+    private static SystemFacade singleInstance;
 
-    public SystemFacade() {
+    public static SystemFacade getInstance() {
+        if (singleInstance == null) {
+            singleInstance = new SystemFacade();
+        }
+
+        return singleInstance;
+
+    }
+
+    private SystemFacade() {
         this.contactManager =  new ContactManager();
         this.contactFinder = new ContactFinder();
         this.dataManager =  DataManager.getInstance();

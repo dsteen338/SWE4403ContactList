@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  * @author dsteen
  */
 public class DeleteUI extends javax.swing.JFrame {
-    private SystemFacade systemFacade = new SystemFacade();
+    private SystemFacade systemFacade = SystemFacade.getInstance();
 
     /**
      * Creates new form DeleteUI

@@ -22,7 +22,7 @@ import javax.swing.table.DefaultTableModel;
  * @author dsteen
  */
 public class SearchUI extends javax.swing.JFrame {
-    SystemFacade systemFacade = new SystemFacade();
+    SystemFacade systemFacade = SystemFacade.getInstance();
     DefaultListModel<Entity> model = new DefaultListModel();
     DefaultTableModel tableModel;
 
