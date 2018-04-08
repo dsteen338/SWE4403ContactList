@@ -20,6 +20,10 @@ public class AddCommand extends CListCommand  {
        this.email = inEmail;
    }
 
+    public AddCommand() {
+       super();
+    }
+
     @Override
     void execute() {
        this.cListMomento = systemFacade.createMomento();
@@ -29,5 +33,10 @@ public class AddCommand extends CListCommand  {
     @Override
     void unExecute() {
         systemFacade.setMomento(cListMomento);
+    }
+
+    @Override
+    CListCommand cloneMe() {
+        return new AddCommand();
     }
 }

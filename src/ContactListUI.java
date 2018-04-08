@@ -14,7 +14,8 @@ import javax.swing.JOptionPane;
  * @author dsteen
  */
 public class ContactListUI extends javax.swing.JFrame {
-    SystemFacade systemFacade = SystemFacade.getInstance();
+    private SystemFacade systemFacade = SystemFacade.getInstance();
+    private CListCommand commandPrototype;
 
     /**
      * Creates new form ContactListUI

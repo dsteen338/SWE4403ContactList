@@ -11,6 +11,10 @@ public class DeleteCommand extends CListCommand  {
         this.id = inId;
     }
 
+    public DeleteCommand() {
+        super();
+    }
+
     @Override
     void execute() {
         this.cListMomento = systemFacade.createMomento();
@@ -22,5 +26,10 @@ public class DeleteCommand extends CListCommand  {
     void unExecute() {
         systemFacade.setMomento(cListMomento);
 
+    }
+
+    @Override
+    CListCommand cloneMe() {
+        return new DeleteCommand();
     }
 }
